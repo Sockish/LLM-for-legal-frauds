@@ -1,8 +1,8 @@
 # Model arguments
 overwrite_hub_revision: true
 # Data training arguments
-model_name_or_path: /root/.cache/huggingface/hub/models--meta-llama--Llama-3.2-1B
-dataset_name_or_path: theatticusproject/cuad-qa
+model_name_or_path: meta-llama/Llama-3.2-1B
+dataset_name_or_path: theatticusproject/cuad
 dataset_mode: online
 
 # Training arguments with sensible defaults
@@ -35,7 +35,7 @@ report_to:
 - wandb
 save_strategy: "no"
 seed: 42
-wandb_run_group: numina-math-1b-cot # Name of the W&B group to collect all runs of this experiment under. Use double-digits for {idx}, starting from 00.
+wandb_run_group: CUAD-LLM # Name of the W&B group to collect all runs of this experiment under. Use double-digits for {idx}, starting from 00.
 wandb_run_id: null # Set this to a globally unique string if you want a descriptive name of your run
 wandb_tags: # Use tags to filter runs on WandB
 - sft

@@ -58,7 +58,7 @@ def main():
         train_dataset, eval_dataset = load_datasets(sft_config.dataset_name_or_path)
     else:
         train_dataset = datasets.load_dataset(sft_config.dataset_name_or_path, split="train")
-        eval_dataset = datasets.load_dataset(sft_config.dataset_name_or_path, split="test")
+        eval_dataset = datasets.load_dataset(sft_config.dataset_name_or_path, split="train")
 
     train_dataset = train_dataset.map(apply_chat_template, fn_kwargs={"tokenizer": tokenizer, "task": "sft"})
     eval_dataset = eval_dataset.map(apply_chat_template, fn_kwargs={"tokenizer": tokenizer, "task": "sft"})
