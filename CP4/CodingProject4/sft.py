@@ -30,21 +30,31 @@ def convert_to_messages_format(example):
     user_input = example.get("input", "")
     output = example.get("output", "")
     
-    # Combine instruction and input for the user message
-    if instruction and user_input:
-        user_content = f"{instruction}\n\n{user_input}"
-    elif instruction:
-        user_content = instruction
-    elif user_input:
-        user_content = user_input
-    else:
-        raise ValueError("No valid input found in example")
+    # Remove debug lines
+    # print("output:", output)
+    # time.sleep(5)
     
-    messages = [
-        {"role": "system", "content": "你是一个专业的法律顾问，能够准确分析法律案例并提供详细的解答。"},
-        {"role": "user", "content": user_content},
-        {"role": "assistant", "content": output}
-    ]
+    # Use instruction as system prompt, input as user message, output as assistant response
+    messages = []
+    
+    # Add system message from instruction (if exists)
+    if instruction:
+        messages.append({"role": "system", "content": instruction})
+    else:
+        # Default system prompt if no instruction
+        messages.append({"role": "system", "content": "你是一个专业的法律顾问，能够准确分析法律案例并提供详细的解答。"})
+    
+    # Add user message from input
+    if user_input:
+        messages.append({"role": "user", "content": user_input})
+    else:
+        raise ValueError("No user input found in example")
+    
+    # Add assistant response from output
+    if output:
+        messages.append({"role": "assistant", "content": output})
+    else:
+        raise ValueError("No output found in example")
     
     example["messages"] = messages
     return example

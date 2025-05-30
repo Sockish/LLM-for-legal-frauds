@@ -25,7 +25,8 @@ from typing import Any, List, Literal, NewType, Optional, Tuple, Union
 from transformers import AutoTokenizer,  PreTrainedTokenizer
 
 
-CHAT_TEMPLATE = "{% for message in messages %}{% if (message['role'] == 'system')%}{{ '' }}{% elif (message['role'] == 'user')%}{{ '### Problem: ' + message['content'] + '\n' }}{% elif (message['role'] == 'assistant')%}{{ '### Solution: ' + message['content'] + '\n' }}{% endif %}{% if loop.last and message['role'] == 'user' and add_generation_prompt %}{{ '### Solution: ' }}{% endif %}{% endfor %}"
+# Updated chat template for legal Q&A
+CHAT_TEMPLATE = "{% for message in messages %}{% if message['role'] == 'system' %}{{ message['content'] + '\n\n' }}{% elif message['role'] == 'user' %}{{ '问题：' + message['content'] + '\n\n' }}{% elif message['role'] == 'assistant' %}{{ '回答：' + message['content'] }}{% endif %}{% endfor %}{% if add_generation_prompt %}{{ '回答：' }}{% endif %}"
 
 
 def apply_chat_template(
@@ -33,15 +34,28 @@ def apply_chat_template(
     tokenizer,
     task: Literal["sft", "generation"],
 ):  
-    #print(example)
     if task in ["sft", "generation"]:
         messages = example["messages"]
-        # We add an empty system message if there is none
-        if messages[0]["role"] != "system":
-            messages.insert(0, {"role": "system", "content": ""})
+        
+        # Apply the chat template
         example["text"] = tokenizer.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True if task == "generation" else False
+            messages, 
+            tokenize=False, 
+            add_generation_prompt=True if task == "generation" else False
         )
+        
+        # Debug: print first few examples to check formatting
+        if hasattr(apply_chat_template, 'debug_count'):
+            apply_chat_template.debug_count += 1
+        else:
+            apply_chat_template.debug_count = 1
+            
+        if apply_chat_template.debug_count <= 3:
+            print(f"Debug example {apply_chat_template.debug_count}:")
+            print(f"Messages: {messages}")
+            print(f"Generated text: {example['text']}")
+            print("-" * 50)
+            
     else:
         raise ValueError(
             f"Task {task} not supported, please ensure that the provided task is one of {['sft', 'generation']}"
@@ -49,12 +63,11 @@ def apply_chat_template(
     return example
 
 
-
 def get_tokenizer(model_name_or_path, set_pad_token: bool = True) -> PreTrainedTokenizer:
     """Get the tokenizer for the model."""
     tokenizer = AutoTokenizer.from_pretrained(
         model_name_or_path,
-        revision="mains",
+        revision="main",  # Fixed typo: was "mains"
         trust_remote_code=False,
     )
 
@@ -65,6 +78,7 @@ def get_tokenizer(model_name_or_path, set_pad_token: bool = True) -> PreTrainedT
     if tokenizer.model_max_length > 100_000:
         tokenizer.model_max_length = 2048
 
+    # Set the updated chat template
     tokenizer.chat_template = CHAT_TEMPLATE
 
     return tokenizer
