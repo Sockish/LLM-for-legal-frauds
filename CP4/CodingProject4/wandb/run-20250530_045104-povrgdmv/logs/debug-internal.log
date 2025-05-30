@@ -1,0 +1,15 @@
+{"time":"2025-05-30T04:51:04.404611056Z","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/root/LLM-for-legal-frauds/CP4/CodingProject4/wandb/run-20250530_045104-povrgdmv/logs/debug-core.log"}
+{"time":"2025-05-30T04:51:04.52350199Z","level":"INFO","msg":"created new stream","id":"povrgdmv"}
+{"time":"2025-05-30T04:51:04.523573627Z","level":"INFO","msg":"stream: started","id":"povrgdmv"}
+{"time":"2025-05-30T04:51:04.523611532Z","level":"INFO","msg":"sender: started","stream_id":"povrgdmv"}
+{"time":"2025-05-30T04:51:04.523596211Z","level":"INFO","msg":"writer: Do: started","stream_id":"povrgdmv"}
+{"time":"2025-05-30T04:51:04.523626309Z","level":"INFO","msg":"handler: started","stream_id":"povrgdmv"}
+{"time":"2025-05-30T04:51:05.309343382Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-30T04:51:30.341904811Z","level":"INFO","msg":"stream: closing","id":"povrgdmv"}
+{"time":"2025-05-30T04:51:30.356919244Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-30T04:51:30.357599101Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-30T04:51:31.726886615Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-30T04:51:33.080305733Z","level":"INFO","msg":"handler: closed","stream_id":"povrgdmv"}
+{"time":"2025-05-30T04:51:33.080356262Z","level":"INFO","msg":"writer: Close: closed","stream_id":"povrgdmv"}
+{"time":"2025-05-30T04:51:33.080390505Z","level":"INFO","msg":"sender: closed","stream_id":"povrgdmv"}
+{"time":"2025-05-30T04:51:33.086529642Z","level":"INFO","msg":"stream: closed","id":"povrgdmv"}

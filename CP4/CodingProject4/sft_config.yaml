@@ -1,0 +1,43 @@
+# Model arguments
+overwrite_hub_revision: true
+# Data training arguments
+model_name_or_path: /root/.cache/huggingface/hub/models--meta-llama--Llama-3.2-1B-Instruct/snapshots/9213176726f574b556790deb65791e0c5aa438b6
+dataset_name_or_path: LeiChenChen/law_test
+dataset_mode: remote
+
+
+# Training arguments with sensible defaults
+# Add other options from here: https://huggingface.co/docs/transformers/v4.26.1/en/main_classes/trainer#transformers.TrainingArguments
+bf16: true
+do_eval: true
+do_train: true
+eval_strategy: epoch # One of ["no", "steps", "epoch"]
+gradient_accumulation_steps: 1
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: False
+learning_rate: 2.0e-05
+log_level: passive
+logging_steps: 5  
+logging_strategy: steps
+lr_scheduler_type: cosine
+max_steps: -1
+num_train_epochs: 3
+output_dir: checkpoints  # do not change when submission
+hub_model_revision: main
+run_name: numina-math-1b-cot
+overwrite_output_dir: true
+per_device_eval_batch_size: 8
+per_device_train_batch_size: 4
+push_to_hub: False
+remove_unused_columns: true
+report_to:
+- tensorboard
+- wandb
+save_strategy: "no"
+seed: 42
+wandb_run_group: numina-math-1b-cot # Name of the W&B group to collect all runs of this experiment under. Use double-digits for {idx}, starting from 00.
+wandb_run_id: null # Set this to a globally unique string if you want a descriptive name of your run
+wandb_tags: # Use tags to filter runs on WandB
+- sft
+warmup_ratio: 0.

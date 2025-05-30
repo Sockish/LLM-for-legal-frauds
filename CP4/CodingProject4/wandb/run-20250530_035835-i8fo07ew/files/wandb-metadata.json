@@ -1,0 +1,84 @@
+{
+  "os":  "Linux-5.15.0-127-generic-x86_64-with-glibc2.35",
+  "python":  "CPython 3.10.16",
+  "startedAt":  "2025-05-30T03:58:36.191557Z",
+  "program":  "/root/LLM-for-legal-frauds/CP4/CodingProject4/sft.py",
+  "codePath":  "CP4/CodingProject4/sft.py",
+  "git":  {
+    "remote":  "git@github.com:Sockish/LLM-for-legal-frauds.git",
+    "commit":  "626c8b7e9b204071f1e523c9cc3d59ddd595c900"
+  },
+  "email":  "726672851@qq.com",
+  "root":  "/root/LLM-for-legal-frauds/CP4/CodingProject4",
+  "host":  "s1339-pytorch-lab9-688644fc6f-gs29j",
+  "executable":  "/root/miniconda3/envs/aimo/bin/python",
+  "codePathLocal":  "sft.py",
+  "cpu_count":  56,
+  "cpu_count_logical":  112,
+  "gpu":  "NVIDIA GeForce RTX 4090 D",
+  "gpu_count":  8,
+  "disk":  {
+    "/":  {
+      "total":  "2163350618112",
+      "used":  "165908598784"
+    }
+  },
+  "memory":  {
+    "total":  "1081809514496"
+  },
+  "cpu":  {
+    "count":  56,
+    "countLogical":  112
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 4090 D",
+      "memoryTotal":  "51527024640",
+      "cudaCores":  14592,
+      "architecture":  "Ada"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 4090 D",
+      "memoryTotal":  "51527024640",
+      "cudaCores":  14592,
+      "architecture":  "Ada"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 4090 D",
+      "memoryTotal":  "51527024640",
+      "cudaCores":  14592,
+      "architecture":  "Ada"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 4090 D",
+      "memoryTotal":  "51527024640",
+      "cudaCores":  14592,
+      "architecture":  "Ada"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 4090 D",
+      "memoryTotal":  "51527024640",
+      "cudaCores":  14592,
+      "architecture":  "Ada"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 4090 D",
+      "memoryTotal":  "51527024640",
+      "cudaCores":  14592,
+      "architecture":  "Ada"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 4090 D",
+      "memoryTotal":  "51527024640",
+      "cudaCores":  14592,
+      "architecture":  "Ada"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 4090 D",
+      "memoryTotal":  "51527024640",
+      "cudaCores":  14592,
+      "architecture":  "Ada"
+    }
+  ],
+  "cudaVersion":  "12.6"
+}

@@ -1,0 +1,40 @@
+  0%|▏                                                                          | 36/19674 [00:43<6:26:58,  1.18s/it]Traceback (most recent call last):
+{'loss': 2.7887, 'grad_norm': 11.611103964306352, 'learning_rate': 1.9999999872507567e-05, 'epoch': 0.0}
+{'loss': 2.3738, 'grad_norm': 4.713514033652495, 'learning_rate': 1.9999996812689296e-05, 'epoch': 0.0}
+{'loss': 2.1907, 'grad_norm': 4.102196495836405, 'learning_rate': 1.9999987250759218e-05, 'epoch': 0.0}
+{'loss': 1.876, 'grad_norm': 3.1130174489903806, 'learning_rate': 1.999997131421586e-05, 'epoch': 0.0}
+{'loss': 1.9243, 'grad_norm': 3.435750220331897, 'learning_rate': 1.9999949003069375e-05, 'epoch': 0.0}
+{'loss': 1.7385, 'grad_norm': 3.2161158770492095, 'learning_rate': 1.9999920317333995e-05, 'epoch': 0.0}
+{'loss': 1.6925, 'grad_norm': 3.079229082438473, 'learning_rate': 1.9999885257028e-05, 'epoch': 0.0}
+{'loss': 1.6978, 'grad_norm': 4.900782803250067, 'learning_rate': 1.9999843822173742e-05, 'epoch': 0.01}
+  File "/root/LLM-for-legal-frauds/CP4/CodingProject4/sft.py", line 181, in <module>
+    main()
+  File "/root/LLM-for-legal-frauds/CP4/CodingProject4/sft.py", line 143, in main
+    train_result = trainer.train()
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 360, in train
+    output = super().train(*args, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/transformers/trainer.py", line 2171, in train
+    return inner_training_loop(
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/transformers/trainer.py", line 2531, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/transformers/trainer.py", line 3712, in training_step
+    self.accelerator.backward(loss, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/accelerate/accelerator.py", line 1995, in backward
+    self.deepspeed_engine_wrapped.backward(loss, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/accelerate/utils/deepspeed.py", line 166, in backward
+    self.engine.backward(loss, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 15, in wrapped_fn
+    ret_val = func(*args, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 1976, in backward
+    self.optimizer.backward(loss, retain_graph=retain_graph)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 15, in wrapped_fn
+    ret_val = func(*args, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/deepspeed/runtime/zero/stage3.py", line 2213, in backward
+    self.loss_scaler.backward(loss.float(), retain_graph=retain_graph)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/deepspeed/runtime/fp16/loss_scaler.py", line 63, in backward
+    scaled_loss.backward(retain_graph=retain_graph)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/torch/_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
