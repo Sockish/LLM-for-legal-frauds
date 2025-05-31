@@ -1,0 +1,36 @@
+  0%|                                                                               | 0/9831 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/root/llm_course_public_wlm/LLM-for-legal-frauds/CP4/CodingProject4/sft.py", line 181, in <module>
+    main()
+  File "/root/llm_course_public_wlm/LLM-for-legal-frauds/CP4/CodingProject4/sft.py", line 143, in main
+    train_result = trainer.train()
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 360, in train
+    output = super().train(*args, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/transformers/trainer.py", line 2171, in train
+    return inner_training_loop(
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/transformers/trainer.py", line 2531, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/transformers/trainer.py", line 3675, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/transformers/trainer.py", line 3731, in compute_loss
+    outputs = model(**inputs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 15, in wrapped_fn
+    ret_val = func(*args, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 1852, in forward
+    loss = self.module(*inputs, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py", line 851, in forward
+    loss = self.loss_function(logits=logits, labels=labels, vocab_size=self.config.vocab_size, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/transformers/loss/loss_utils.py", line 47, in ForCausalLMLoss
+    loss = fixed_cross_entropy(shift_logits, shift_labels, num_items_in_batch, ignore_index, **kwargs)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/transformers/loss/loss_utils.py", line 26, in fixed_cross_entropy
+    loss = nn.functional.cross_entropy(source, target, ignore_index=ignore_index, reduction=reduction)
+  File "/root/miniconda3/envs/aimo/lib/python3.10/site-packages/torch/nn/functional.py", line 3053, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.91 GiB. GPU 0 has a total capacty of 23.55 GiB of which 3.53 GiB is free. Process 1862334 has 20.01 GiB memory in use. Of the allocated memory 17.39 GiB is allocated by PyTorch, and 1.96 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

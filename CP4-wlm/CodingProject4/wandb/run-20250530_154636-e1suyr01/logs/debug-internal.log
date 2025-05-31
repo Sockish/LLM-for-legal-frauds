@@ -1,0 +1,15 @@
+{"time":"2025-05-30T15:46:37.173142353+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/root/llm_course_public_wlm/LLM-for-legal-frauds/CP4/CodingProject4/wandb/run-20250530_154636-e1suyr01/logs/debug-core.log"}
+{"time":"2025-05-30T15:46:37.290674486+08:00","level":"INFO","msg":"created new stream","id":"e1suyr01"}
+{"time":"2025-05-30T15:46:37.290715348+08:00","level":"INFO","msg":"stream: started","id":"e1suyr01"}
+{"time":"2025-05-30T15:46:37.290776271+08:00","level":"INFO","msg":"sender: started","stream_id":"e1suyr01"}
+{"time":"2025-05-30T15:46:37.290751406+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"e1suyr01"}
+{"time":"2025-05-30T15:46:37.290916848+08:00","level":"INFO","msg":"handler: started","stream_id":"e1suyr01"}
+{"time":"2025-05-30T15:46:37.819962364+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-30T18:24:13.269278809+08:00","level":"INFO","msg":"stream: closing","id":"e1suyr01"}
+{"time":"2025-05-30T18:24:13.269340629+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-30T18:24:13.270288812+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-30T18:24:14.539856204+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-30T18:24:14.921008393+08:00","level":"INFO","msg":"handler: closed","stream_id":"e1suyr01"}
+{"time":"2025-05-30T18:24:14.921098004+08:00","level":"INFO","msg":"sender: closed","stream_id":"e1suyr01"}
+{"time":"2025-05-30T18:24:14.921090997+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"e1suyr01"}
+{"time":"2025-05-30T18:24:14.922111665+08:00","level":"INFO","msg":"stream: closed","id":"e1suyr01"}
